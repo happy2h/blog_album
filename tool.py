@@ -19,6 +19,7 @@ class Graphics:
         self.infile = infile
         self.outfile = outfile
 
+
     def fixed_size(self, width, height):  
         """按照固定尺寸处理图片"""  
         im = Image.open(self.infile)  
@@ -95,12 +96,14 @@ def make_directory(directory):
     """创建目录"""
     os.makedirs(directory)
 
+
 def directory_exists(directory):
     """判断目录是否存在"""
     if os.path.exists(directory):
         return True
     else:
         return False
+
 
 def list_img_file(directory):
     """列出目录下所有文件，并筛选出图片文件列表返回"""
@@ -124,6 +127,7 @@ def print_help():
     3) smaller compress(4M to 300K around)
     """)
 
+
 def compress(choose, des_dir, src_dir, file_list):
     """压缩算法，img.thumbnail对图片进行压缩，
     
@@ -146,6 +150,8 @@ def compress(choose, des_dir, src_dir, file_list):
         w, h = img.size
         img.thumbnail((int(w/scale), int(h/scale)))
         img.save(des_dir + infile)
+
+
 def compress_photo():
     '''调用压缩图片的函数
     '''
@@ -210,6 +216,8 @@ def handle_photo():
     final_dict = {"list": list_info}
     with open("../../blog/themes/next/source/lib/album/data.json","w") as fp:
         json.dump(final_dict, fp)
+
+
 def cut_photo():
     """裁剪算法
     
@@ -234,12 +242,12 @@ def cut_photo():
         print("source directory not exist!")     
 
 
-
 def git_operation():
     
     os.system('git add --all')
     os.system('git commit -m "add photos"')
     os.system('git push origin master')
+
 
 # if __name__ == "__main__":
 #     cut_photo()        # 裁剪图片，裁剪成正方形，去中间部分
