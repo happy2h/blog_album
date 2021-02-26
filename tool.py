@@ -136,6 +136,7 @@ def compress(choose, des_dir, src_dir, file_list):
     choose: str
             选择压缩的比例，有4个选项，越大压缩后的图片越小
     """
+    choose = input()
     if choose == '1':
         scale = SIZE_normal
     if choose == '2':
