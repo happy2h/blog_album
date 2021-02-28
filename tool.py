@@ -118,15 +118,6 @@ def list_img_file(directory):
     return new_list
 
 
-def print_help():
-    print("""
-    This program helps compress many image files
-    you can choose which scale you want to compress your img(jpg/png/etc)
-    1) normal compress(4M to 1M around)
-    2) small compress(4M to 500K around)
-    3) smaller compress(4M to 300K around)
-    """)
-
 
 def compress(choose, des_dir, src_dir, file_list):
     """压缩算法，img.thumbnail对图片进行压缩，
@@ -233,7 +224,6 @@ def cut_photo():
         file_list = list_img_file(src_dir)
         # print file_list
         if file_list:
-            print_help()
             for infile in file_list:
                 img = Image.open(src_dir+infile)
                 Graphics(infile=src_dir+infile, outfile=src_dir + infile).cut_by_ratio()            
