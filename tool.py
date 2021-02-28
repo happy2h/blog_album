@@ -118,6 +118,11 @@ def list_img_file(directory):
     return new_list
 
 
+def print_help():
+    print("""
+    Thanks for using!
+    """)
+
 
 def compress(choose, des_dir, src_dir, file_list):
     """压缩算法，img.thumbnail对图片进行压缩，
@@ -224,6 +229,7 @@ def cut_photo():
         file_list = list_img_file(src_dir)
         # print file_list
         if file_list:
+            print_help()
             for infile in file_list:
                 img = Image.open(src_dir+infile)
                 Graphics(infile=src_dir+infile, outfile=src_dir + infile).cut_by_ratio()            
