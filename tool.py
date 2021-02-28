@@ -120,7 +120,11 @@ def list_img_file(directory):
 
 def print_help():
     print("""
-    Thanks for using!
+    This program helps compress many image files
+    you can choose which scale you want to compress your img(jpg/png/etc)
+    1) normal compress(4M to 1M around)
+    2) small compress(4M to 500K around)
+    3) smaller compress(4M to 300K around)
     """)
 
 
